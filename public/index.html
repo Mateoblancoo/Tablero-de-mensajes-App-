@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tablero de Mensajes</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Tablero de Mensajes</h1>
+    <div class="user-box">
+      <label for="username">Tu nombre</label>
+      <input id="username" type="text" placeholder="Ej: Mateo" maxlength="24" />
+      <small id="usernameHelp">2–24 caracteres</small>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Publicar nuevo mensaje</h2>
+      <form id="createForm" class="form">
+        <div class="field">
+          <label for="title">Título <span class="muted">(máx. 60)</span></label>
+          <input id="title" name="title" type="text" maxlength="60" required />
+          <div class="counter" id="titleCounter">0 / 60</div>
+        </div>
+
+        <div class="field">
+          <label for="body">Cuerpo <span class="muted">(máx. 280)</span></label>
+          <textarea id="body" name="body" rows="3" maxlength="280" required></textarea>
+          <div class="counter" id="bodyCounter">0 / 280</div>
+        </div>
+
+        <button class="btn primary" type="submit">Publicar</button>
+        <p class="error" id="createError"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="row-between">
+        <h2>Mensajes</h2>
+        <button id="refreshBtn" class="btn">Actualizar</button>
+      </div>
+      <ul id="messagesList" class="messages"></ul>
+      <p id="emptyState" class="muted" style="display:none;">Todavía no hay mensajes.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hecho con ❤️ · HTML · CSS · JS · Express · SQLite</p>
+  </footer>
+
+  <template id="messageItemTemplate">
+    <li class="message">
+      <div class="message-main">
+        <h3 class="msg-title"></h3>
+        <p class="msg-body"></p>
+        <div class="meta"></div>
+      </div>
+      <div class="actions">
+        <button class="btn small" data-action="edit">Editar</button>
+        <button class="btn small danger" data-action="delete">Borrar</button>
+      </div>
+      <form class="edit-form" style="display:none;">
+        <div class="field">
+          <label>Título</label>
+          <input type="text" name="title" maxlength="60" />
+          <div class="counter small"></div>
+        </div>
+        <div class="field">
+          <label>Cuerpo</label>
+          <textarea name="body" rows="3" maxlength="280"></textarea>
+          <div class="counter small"></div>
+        </div>
+        <div class="edit-actions">
+          <button class="btn small primary" data-action="save">Guardar</button>
+          <button class="btn small" data-action="cancel">Cancelar</button>
+        </div>
+        <p class="error"></p>
+      </form>
+    </li>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>
