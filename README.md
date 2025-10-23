@@ -1,4 +1,4 @@
-# Message Board App
+# Message Board App (en curso)
 
 Un **Tablero de Mensajes** full‑stack con:
 - **Frontend**: HTML + CSS + JS
