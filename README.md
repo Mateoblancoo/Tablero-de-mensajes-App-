@@ -18,14 +18,13 @@ Un **Tablero de Mensajes** full‑stack con:
 
 ### clonar e instalar dependencias
 
-- git clone https://github.com/TU_USUARIO/Tablero-de-mensajes-App-.git
+- git clone https://github.com/Mateoblancoo/Tablero-de-mensajes-App-.git
 - cd Tablero-de-mensajes-App-
 - npm install
 
 ### levantar el servidor
 
 - npm run dev
-- npm 
 
 ### abrir la app
 
